@@ -147,7 +147,6 @@
 ///--------------------------------------
 /// @name Bluetooth Peripheral
 ///--------------------------------------
-#if TARGET_OS_IOS
 
 # pragma mark - Bluetooth Peripheral
 
@@ -192,5 +191,5 @@
  * Stop the device acting as a bluetooth central.
  */
 - (void)stopAsBluetoothCentral;
-#endif
+
 @end

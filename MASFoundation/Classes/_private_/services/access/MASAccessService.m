@@ -16,11 +16,8 @@
 #import "MASSecurityService.h"
 
 #import <openssl/x509.h>
-
-#if TARGET_OS_IOS
-
 #import <LocalAuthentication/LocalAuthentication.h>
-#endif
+
 # pragma mark - Property Constants
 
 static NSString *const kMASAccessSharedStorageServiceName = @"SharedStorageService";
@@ -841,7 +838,7 @@ static NSString *const kMASAccessIsNotFreshInstallFlag = @"isNotFreshInstall";
         group = [NSString stringWithFormat:@"%@.%@", [components objectAtIndex:0], groupSuffix];
     }
     
-    //DLog(@"access group generated: %@", group);
+    DLog(@"access group generated: %@", group);
     CFRelease(result);
     
     return group;
@@ -849,7 +846,6 @@ static NSString *const kMASAccessIsNotFreshInstallFlag = @"isNotFreshInstall";
 
 
 # pragma mark - Public
-#if TARGET_OS_IOS
 
 - (BOOL)lockSession:(NSError * __nullable __autoreleasing * __nullable)error
 {
@@ -1044,7 +1040,7 @@ static NSString *const kMASAccessIsNotFreshInstallFlag = @"isNotFreshInstall";
     return success;
 }
 
-#endif
+
 - (void)removeSessionLock
 {
     [self setAccessValueString:nil withAccessValueType:MASAccessValueTypeSecuredIdToken];

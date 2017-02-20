@@ -8,10 +8,10 @@
 //  of the MIT license. See the LICENSE file for details.
 //
 
-#import <tvOS_MASFoundation/tvOS MASFoundation.h>
-#if TARGET_OS_IOS
+#import <MASFoundation/MASFoundation.h>
+
 #import <WebKit/WebKit.h>
-#endif
+
 @protocol MASSocialLoginDelegate <NSObject>
 
 @required
@@ -80,9 +80,8 @@
  *
  *  @return MASSocialLogin object
  */
-#if TARGET_OS_IOS
 - (instancetype)initWithAuthenticationProvider:(MASAuthenticationProvider *)provider webView:(WKWebView *)webView;
-#endif
+
 @end
 
 
